@@ -1,0 +1,18 @@
+.header{
+    height: 80px;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 100px;
+}
+
+nav.header a {
+    font-weight: 500;
+    color: #ffffff;
+    text-decoration: inherit;
+    margin: 5px;
+  }
+  nav.header a:hover {
+    color: #c35a21;
+  }
