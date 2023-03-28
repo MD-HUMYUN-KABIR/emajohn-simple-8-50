@@ -5,7 +5,7 @@ const Cart = ({cart}) => {
     // const cart = props.cart; option 1
     // const {cart} = props; //option 2
     console.log(cart);
-
+//akhane cart hocche akta array.customer jei jei product gula add korbe sei product gula ta akhane store hobe and akhan theke prottekta product er price k nie amra jug kore vibonno kaj korbo
     let totalPrice = 0; //f2 for change all
     let totalShipping = 0;
     for (const product of cart){
@@ -27,3 +27,6 @@ const Cart = ({cart}) => {
 };
 
 export default Cart;
+/* 
+jei structure vibonno jaygay use korbo seta k alada akta component e rakhbo
+*/
