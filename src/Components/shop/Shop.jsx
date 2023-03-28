@@ -13,6 +13,8 @@ const Shop = () => {
         .then(data => setProducts(data))
     }, [])
 
+
+    //amra outside er kuno kichu jokhon kuno browser ba onno kichur sathe interect kori thik tokhon  e useEffect use kori. tai amra akhn local storage theke customer er add kora object gula nie kaj korbo tai useEffect chalabo
     useEffect(()=> {
         const storedCart = getShoppingCart();
         //step-1 get id
@@ -23,7 +25,9 @@ const Shop = () => {
             const quantity = storedCart[id];
             // addedProduct.quantity = quantity;
         }
-    }, [products])
+    }, [products])// ader useEffect kore set kora products gula akhane rehe dilam ...akhn ai product gula theke abar kaj korte parbo
+
+
 // nicher folder theke uporer folder e kuno props value pathanu jay na..but upore theke kuno function likhe seta k props hisebe nicher kuno folder e pathie dile and sekhan theke abar ai funtion k  parameter soho call korle uporer function e  value automatic chole asbe
     const handleAddToCart = (product) => {
         const newCart = [...cart, product];
