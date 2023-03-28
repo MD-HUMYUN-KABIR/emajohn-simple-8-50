@@ -17,14 +17,23 @@ const Shop = () => {
     //amra outside er kuno kichu jokhon kuno browser ba onno kichur sathe interect kori thik tokhon  e useEffect use kori. tai amra akhn local storage theke customer er add kora object gula nie kaj korbo tai useEffect chalabo
     useEffect(()=> {
         const storedCart = getShoppingCart();
+        const savedCart = [];
         //step-1 get id
         for(const id in storedCart){
             // step 2 get the product by using id
             const addedProduct = products.find(product => product.id === id);
-            // step 3
-            const quantity = storedCart[id];
-            // addedProduct.quantity = quantity;
+            // console.log(addedProduct);
+           
+            // step 3 add quantity
+            if(addedProduct){
+                const quantity = storedCart[id];
+                addedProduct.quantity = quantity;
+                savedCart.push(addedProduct);
+            }
+            // console.log('added product', addedProduct);
         }
+        setCart(savedCart);
+
     }, [products])// ader useEffect kore set kora products gula akhane rehe dilam ...akhn ai product gula theke abar kaj korte parbo
 
 
