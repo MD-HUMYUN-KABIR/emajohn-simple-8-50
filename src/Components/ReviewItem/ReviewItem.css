@@ -10,6 +10,6 @@ width: 91px;
 .review-details{
     flex-grow: 1;
 }
-.btn{
+.btn-delete{
     background-color: orange;
 }

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { addToDb, getShoppingCart } from '../../utilities/fakedb';
+import { addToDb, deleteShoppingCart, getShoppingCart } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import './Shop.css'
+import { Link } from 'react-router-dom';
 const Shop = () => {
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([]);
@@ -52,7 +53,10 @@ const Shop = () => {
         setCart(newCart);//akhane hocche jeno click korle e setcart e cart array add hoy and useEffect theke o setCart e arekta same cart array e automatic Vabe set kora hoyeche
         addToDb(product.id);
     }
-
+    const handleClearCart = () =>{
+        setCart([]);
+        deleteShoppingCart();
+    }
     return (
         <div className='shop-container'>
             <div className='product-container'>
@@ -65,7 +69,12 @@ const Shop = () => {
                 }
             </div>
             <div className='cart-container'>
-            <Cart cart={cart}> </Cart>
+            <Cart 
+            handleClearCart={handleClearCart}
+            cart={cart}
+            > 
+            <Link to="/orders"> <button className='btn-review'>review order</button></Link>
+            </Cart>
             </div>
         </div>
     );
